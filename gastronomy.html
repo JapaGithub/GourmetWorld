@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyect</title>
+    <link  rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link  href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted&display=swap"
+    rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="grid-container">
+    <!-- <header class="header">
+            <div class="menu_Container">
+                <h1 class="title">Proyecto Practico Codo a Codo 4.0</h1>
+                <h1 class="title1">Proyecto Practico Codo a Codo</h1>
+                <h1 class="title2">Proyecto Practico Codo a Codo</h1> 
+            </div>-->
+
+    <header class="header"><h1 class="title1">G&C</h1></header>
+
+    <nav class="navbar">
+      <ul class="navbar-menu">
+        <li class="navbar-item">
+        <a class="title" href="index.html">Home</a>
+        </li>
+        <li class="navbar-item">
+        <a class="title" href="gastronomy.html">Gastronomy</a>
+        </li>
+        <li class="navbar-item">
+        <a class="title" href="cocktails.html">Cocktails</a>
+        </li>
+    </ul>
+    </nav>
+
+    <aside class="sidebar">
+      <h3 class="title2">Gastronomy of the World</h3>
+        
+        <div class="item-sidebar">
+          <img class="img-sidebar" src="/assets/hamburguesa.jpg" >
+          <h3>Título de la primera imagen</h3>
+          <p>Descripción de la primera imagen.</p>
+      </div>
+  
+      <div class="item-sidebar">
+          <img class="img-sidebar" src="/assets/hamburguesa.jpg" >
+          <h3>Título de la segunda imagen</h3>
+          <p>Descripción de la segunda imagen.</p>
+      </div>
+
+      <div class="item-sidebar">
+        <img class="img-sidebar" src="/assets/hamburguesa.jpg" >
+        <h3>Título de la primera imagen</h3>
+        <p>Descripción de la primera imagen.</p>
+    </div>
+
+    <div class="item-sidebar">
+        <img class="img-sidebar" src="/assets/hamburguesa.jpg" alt="4">
+        <h3>Título de la segunda imagen</h3>
+        <p>Descripción de la segunda imagen.</p>
+    </div>
+
+    <div class="item-sidebar">
+      <img  class="img-sidebar" src="/assets/hamburguesa.jpg" >
+      <h3>Título de la segunda imagen</h3>
+      <p>Descripción de la segunda imagen.</p>
+  </div>
+
+    </aside>
+
+    <article class="main">
+      <h1 style="color: aquamarine;">Gastronomy</h1>
+
+        <!---------------- List-Products ------------GO-->
+      <div class="product"> 
+        <h2>Hamburguesa</h2>
+        <img src="/assets/hamburguesa.jpg">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, reprehenderit fugit voluptatum veritatis dignissimos aliquid.
+          Architecto, et! Tenetur, non cumque quae earum aspernatur totam odio laboriosam quidem sunt? Veniam, velit?</p>
+        <button class="like-button" onclick="toggleLike('product1')">Me gusta</button>
+        <p id="like-count-product1">0</p>
+    </div>
+
+    <div class="product">
+        <h2>Producto 2</h2>
+        <img src="product2.jpg">
+        <p>Descripción del producto 2</p>
+        <button class="like-button" onclick="toggleLike('product2')">Me gusta</button>
+        <p id="like-count-product2">0</p>
+    </div>
+
+    <div class="product"> 
+      <h2>Producto 1</h2>
+      <img src="product.jpg">
+      <p>hamburguesa</p>
+      <button class="like-button" onclick="toggleLike('product3')">Me gusta</button>
+      <p id="like-count-product3">0</p>
+  </div>
+
+  <div class="product">
+      <h2>Producto 2</h2>
+      <img src="product2.jpg">
+      <p>Descripción del producto 2</p>
+      <button class="like-button" onclick="toggleLike('product4')">Me gusta</button>
+      <p id="like-count-product4">0</p>
+  </div>
+
+  <div class="product"> 
+    <h2>Producto 1</h2>
+    <img src="product.jpg">
+    <p>hamburguesa</p>
+    <button class="like-button" onclick="toggleLike('product5')">Me gusta</button>
+    <p id="like-count-product5">0</p>
+</div>
+
+<div class="product">
+    <h2>Producto 2</h2>
+    <img src="product2.jpg">
+    <p>Descripción del producto 2</p>
+    <button class="like-button" onclick="toggleLike('product6')">Me gusta</button>
+    <p id="like-count-product6">0</p>
+</div>
+
+    <!---------------- List-Products ------------END-->
+
+    </article>
+
+    <footer class="footer">
+
+      <div>
+        <ul class="navbar-menu-footer">
+          <li class="navbar-item-footer">
+            <a class="title" href="index.html">Home</a>
+          </li>
+          <li class="navbar-item-footer">
+            <a class="title" href="form.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    </body>
+</html>

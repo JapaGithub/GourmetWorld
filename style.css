@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Rock+Salt&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1rem;
+  min-height: 100vh;
+  padding: 20px; 
+  background-color: black;
+  opacity: 0.9;
+  
+}
+
+.grid-container > * {
+  box-shadow: 10px 6px 37px -13px #0b5d95;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template: 
+  "header" 10%
+  "navbar"15%
+  "main" auto
+  "sidebar" 25%
+  "footer" 10%;
+
+  .header {
+    grid-area: header;
+    background-color: #0b5d95;
+  }
+/* --------------SIDEBAR---------------GO-- */
+
+.item-sidebar {
+  margin-bottom: 20px;
+  border: 1px solid #050404;
+  padding: 36px;
+  border-radius: 5px;
+
+}
+  .img-sidebar {
+    float: left;
+    padding: 5%;
+    height: 45%;
+    width: 45%;
+  }
+
+.item-sidebar h3 {
+  margin-top: 0;
+}
+
+
+/* --------------SIDEBAR--------------END-- */
+
+
+/* --------------NAVBAR---------------GO-- */  
+  .navbar {
+    grid-area: navbar;
+    display: grid;
+    grid-template-columns: 3fr auto 1fr;
+    padding: 10px 20px; 
+    background-image: url('/assets/madera.jpg');
+    background-size:contain;
+    background-position: center;
+    
+  }
+  .navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .navbar-item {
+    margin-left: 46px;
+    font-size: 86%;
+  }
+  .navbar-item:first-child{
+    margin-left: 0;
+  }
+
+  .navbar-link {
+    color: white;   
+    padding: 13px;
+  }
+  .navbar-item:hover{
+    background-color: green;
+  }
+/* --------------NAVBAR--------------END--- */
+
+
+  .sidebar {
+    grid-area: sidebar;
+    background-color: #c8c9b3;
+  
+  }
+  .main {
+    grid-area: main;
+    background-color: rgb(7, 4, 3);
+        .contentMains{
+      width : "100%";
+      height: "100%";  
+    }
+  }
+
+.video-home{
+  width: 40%; 
+  height: 20%;
+}
+/*--------------- FOOTER ---------GO-------*/
+
+.footer {
+  grid-area: footer;
+  background-image: url('/assets/madera.jpg');
+  background-size:contain;
+  background-position: center;
+
+  }
+  @media (min-width:768px) {
+    grid-template: 
+      "header navbar" 50px
+      "header navbar" 50px
+      "sidebar main" auto 
+      "footer footer" 60px/
+      300px auto;
+  }
+  @media (min-width:992px) {
+    grid-template: 
+      "header navbar navbar" 90px
+      "sidebar main main" auto
+      "footer footer footer" 66px /
+      360px auto;
+  }
+
+.navbar-menu-footer{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.navbar-item-footer {
+  margin-left: 46px;
+  font-size: 11px;
+  
+}
+.navbar-item-footer:first-child{
+  margin-left: 0;
+}
+
+
+/*--------------- FOOTER ------------END----*/
+
+
+}
+/*--------------- List-Products ------------GO----*/
+.product {
+  float: left;
+  margin: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  height: 46%;
+  width: 30%;
+  background-color: #361d1182;
+}
+.product:hover{
+  background-color: #ed424d6c;
+}
+.product h2 {
+  margin-top: 0;
+  color: #ccc;
+}
+
+.product img {
+  max-width: 50%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.product p {
+  margin-bottom: 10px;
+  color: #d1caca;
+
+}
+
+.product button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product button:hover {
+  background-color: #0056b3;
+}
+
+.like-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.like-button:hover {
+  background-color: #0056b3;
+}
+
+/*------------ List-Products - END ---------------*/
+
+
+#index{
+  background-color: black;
+  justify-content: space-around;
+}
+
+/*--------- VIDEO--------GO- */
+.video-background{
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  z-index: -1;
+  opacity: 0.60;
+
+}
+.button_video{
+  background-color: #c8c9b3;
+  font-size: 3rem;
+}
+.video-index2{
+  width: 100%;
+  height: 100%;
+}
+
+/*--------- VIDEO--------END- */
+
+
+.title {
+    display: grid;
+    font-family: "Jersey 10 Charted", sans-serif;
+    color: #f5f2f0;
+    background-color: #101315;
+    justify-content: center;
+    font-size: 3em;
+}
+.title:hover{
+  color: #ed424dab;
+  background-color: #331C17;
+}
+
+.title1  {
+    font-family: "Rock Salt", cursive;
+    font-weight: 16em;
+    font-style: normal;
+    color: beige;
+  }
+
+.title2{
+    font-family: "Love Ya Like A Sister", cursive;
+    font-weight: 6em;
+    font-style: normal;
+    color: #352220;
+  }
+  
