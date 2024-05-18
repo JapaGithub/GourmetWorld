@@ -21,56 +21,39 @@
 
 
     <header class="header"><h1 class="title1">G&C</h1></header>
-
+<!------------------------------------- Navbar -------------------------------------------GO--->
     <nav class="navbar">
-      <ul class="navbar-menu">
-        <li class="navbar-item">
-        <a class="title" href="/views/index.html">Home</a>
-        </li>
-        <li class="navbar-item">
-        <a class="title" href="/views/gastronomy.html">Gastronomy</a>
-        </li>
-        <li class="navbar-item">
-        <a class="title" href="/views/cocktails.html">Cocktails</a>
-        </li>
-    </ul>
-    </nav>
 
+      <!-----Search----GO--->
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+      <!-----Search----END--->
+
+        <ul class="navbar-menu">
+          <li class="navbar-item">
+          <a class="title" href="/views/index.html">Home</a>
+          </li>
+          <li class="navbar-item">
+          <a class="title" href="/views/gastronomy.html">Gastronomy</a>
+          </li>
+          <li class="navbar-item">
+          <a class="title" href="/views/cocktails.html">Cocktails</a>
+          </li>
+      </ul>
+    </nav>
+<!------------------------------------- Navbar -------------------------------------------END--->
+
+<!------------------------------------- Sidebar -------------------------------------------GO--->
     <aside class="sidebar">
       <h3 class="title2">Gastronomy of the World</h3>
         
-        <div class="item-sidebar">
-          <img class="img-sidebar" src="/assets/hamburguesa.jpg" >
-          <h3>Título de la primera imagen</h3>
-          <p>Descripción de la primera imagen.</p>
-      </div>
-  
-      <div class="item-sidebar">
-          <img class="img-sidebar" src="/assets/hamburguesa.jpg" >
-          <h3>Título de la segunda imagen</h3>
-          <p>Descripción de la segunda imagen.</p>
-      </div>
-
-      <div class="item-sidebar">
-        <img class="img-sidebar" src="/assets/hamburguesa.jpg" >
-        <h3>Título de la primera imagen</h3>
-        <p>Descripción de la primera imagen.</p>
-    </div>
-
-    <div class="item-sidebar">
-        <img class="img-sidebar" src="/assets/hamburguesa.jpg" alt="4">
-        <h3>Título de la segunda imagen</h3>
-        <p>Descripción de la segunda imagen.</p>
-    </div>
-
-    <div class="item-sidebar">
-      <img  class="img-sidebar" src="/assets/hamburguesa.jpg" >
-      <h3>Título de la segunda imagen</h3>
-      <p>Descripción de la segunda imagen.</p>
-  </div>
-
+        <div id="recipe-container"></div>
     </aside>
+<!------------------------------------- Sidebar -------------------------------------------END---> 
 
+<!------------------------------------- Main -------------------------------------------GO--->
     <article class="main">
       <h1 style="color: aquamarine;">Gastronomy</h1>
 
@@ -127,7 +110,9 @@
     <!---------------- List-Products ------------END-->
 
     </article>
+<!------------------------------------- Main -------------------------------------------END--->
 
+<!------------------------------------- Footer -------------------------------------------GO--->
     <footer class="footer">
 
       <div>
@@ -141,7 +126,7 @@
         </ul>
       </div>
     </footer>
-
-    <script src="script.js"></script>
+<!------------------------------------- Footer -------------------------------------------END--->
+    <script src="/script.js"></script>
     </body>
 </html>
