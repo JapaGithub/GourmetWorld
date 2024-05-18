@@ -36,29 +36,6 @@ body {
     grid-area: header;
     background-color: #0b5d95;
   }
-/* --------------SIDEBAR---------------GO-- */
-
-.item-sidebar {
-  margin-bottom: 20px;
-  border: 1px solid #050404;
-  padding: 36px;
-  border-radius: 5px;
-
-}
-  .img-sidebar {
-    float: left;
-    padding: 5%;
-    height: 45%;
-    width: 45%;
-  }
-
-.item-sidebar h3 {
-  margin-top: 0;
-}
-
-
-/* --------------SIDEBAR--------------END-- */
-
 
 /* --------------NAVBAR---------------GO-- */  
   .navbar {
@@ -67,9 +44,7 @@ body {
     grid-template-columns: 3fr auto 1fr;
     padding: 10px 20px; 
     background-image: url('/assets/madera.jpg');
-    background-size:contain;
-    background-position: center;
-    
+    background-size:contain;    
   }
   .navbar-menu {
     list-style-type: none;
@@ -90,19 +65,74 @@ body {
 
   .navbar-link {
     color: white;   
-    padding: 13px;
+    padding: 3%;
   }
   .navbar-item:hover{
     background-color: green;
   }
+    /* --------search-------GO--- */
+  .search-box {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+    
+    
+}
+.search-box input[type="text"] {
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    outline: none;    
+}
+
+.search-box button {
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 53%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+    
+}
+    /* --------search-------END--- */
+
 /* --------------NAVBAR--------------END--- */
 
 
-  .sidebar {
-    grid-area: sidebar;
-    background-color: #c8c9b3;
-  
+/* --------------SIDEBAR---------------GO-- */
+
+#recipe-container {
+  margin-bottom: 20px;
+  border: 1px solid #050404;
+  padding: 3%;
+  padding-bottom: 0;
+  border-radius: 5px;
+  height: 30%;
+  width: 100%;
+
+}
+#recipe-container > img {
+    height: 50%;
+    width: 50%;
   }
+
+.item-sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #c8c9b3;
+
+}
+/* --------------SIDEBAR--------------END-- */
+
+/* --------------MAIN--------------GO-- */
+
   .main {
     grid-area: main;
     background-color: rgb(7, 4, 3);
@@ -116,6 +146,9 @@ body {
   width: 40%; 
   height: 20%;
 }
+
+/* --------------MAIN--------------END-- */
+
 /*--------------- FOOTER ---------GO-------*/
 
 .footer {
@@ -227,7 +260,6 @@ body {
 
 /*------------ List-Products - END ---------------*/
 
-
 #index{
   background-color: black;
   justify-content: space-around;
@@ -253,7 +285,7 @@ body {
 
 /*--------- VIDEO--------END- */
 
-
+/*--------- TITLES --------GO- */
 .title {
     display: grid;
     font-family: "Jersey 10 Charted", sans-serif;
@@ -281,3 +313,4 @@ body {
     color: #352220;
   }
   
+/*--------- TITLES --------END- */
