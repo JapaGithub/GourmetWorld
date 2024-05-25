@@ -105,20 +105,23 @@ body {
 
 /* --------------SIDEBAR---------------GO-- */
 
-#recipe-container {
+.recipe-container {
   margin-bottom: 20px;
-  border: 1px solid #050404;
   padding: 3%;
   padding-bottom: 0;
-  border-radius: 5px;
-  height: 30%;
+  height: 50%;
   width: 100%;
 
 }
-#recipe-container > img {
-    height: 50%;
-    width: 50%;
+.recipe-container img {
+    height: auto;
+    width: 100%;
   }
+
+  .recipe-container button {
+    height: 3em;
+    width: 100%;
+  }  
 
 .item-sidebar h3 {
   margin-top: 0;
@@ -134,12 +137,8 @@ body {
 /* --------------MAIN--------------GO-- */
 
   .main {
-    grid-area: main;
-    background-color: rgb(7, 4, 3);
-        .contentMains{
-      width : "100%";
-      height: "100%";  
-    }
+  grid-area: main;
+  background-color: #403c3c;
   }
 
 .video-home{
@@ -199,52 +198,126 @@ body {
 
 }
 /*--------------- List-Products ------------GO----*/
+
 .product {
-  float: left;
+  display: inline-block;
+  vertical-align: top;
   margin: 6px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 20px;
+  padding: 1%;
   margin-bottom: 20px;
-  height: 46%;
-  width: 30%;
+  max-width: 30%;
+  max-height: 26%;
+  min-height: 26%;
+  min-width: 30%;
   background-color: #361d1182;
+
 }
 .product:hover{
   background-color: #ed424d6c;
+  max-width: 32%;
+  max-height: 28%;
+  min-height: 28%;
+  min-width: 32%;
 }
 .product h2 {
   margin-top: 0;
   color: #ccc;
+  font-size:1.5em;
+}
+
+.product h2:hover {
+  color: white;
+  font-size:larger;
 }
 
 .product img {
-  max-width: 50%;
+  max-width: 60%;
+  min-height: 30%;
   height: auto;
-  margin-bottom: 10px;
-}
-
-.product p {
-  margin-bottom: 10px;
-  color: #d1caca;
-
+  
 }
 
 .product button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  background-color: #0b5d95;
+  color: white;
+  border-radius: 6px;
+  height: 2em;
+  width: 6em;
+  font-size: large;
+}
+
+#modal {
+  vertical-align: top;
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  padding: 1%;
+
+ 
+}
+#modal img {
+  width: 30%;
+  height: 30%;
+  align-items: flex-start;
+  
+}
+
+#modal ul {
+  list-style-type: none; 
+  padding: 0;
+  justify-content: flex-end;
+  align-items: flex-end;
+  color: #331C17;
+  background-color: rgba(164, 166, 167, 0.349);
+  
+}
+
+#modal-content {
+  background: #fffef3;
+  padding: 3%;
+  border-radius: 25px;
+  max-width: 83%;
+  width: 100%;
+  max-width: 60%;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+.close {
+  float: right;
+  font-size: 1.9em;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  color: white;
+  background-color: #331C17;
+  border-radius: 9px;
+
 }
 
-.product button:hover {
-  background-color: #0056b3;
+.close:hover {
+  float: right;
+  
+  cursor: pointer;
+  color: black;
+  background-color: #ed424dab;
+  border-radius: 9em;
+
 }
 
-.like-button {
+
+/* .product p {
+  margin-bottom: 10px;
+  color: #d1caca;
+
+} */
+
+/* .like-button {
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -256,7 +329,9 @@ body {
 
 .like-button:hover {
   background-color: #0056b3;
-}
+} */
+
+
 
 /*------------ List-Products - END ---------------*/
 
@@ -264,6 +339,7 @@ body {
   background-color: black;
   justify-content: space-around;
 }
+
 
 /*--------- VIDEO--------GO- */
 .video-background{
@@ -314,3 +390,13 @@ body {
   }
   
 /*--------- TITLES --------END- */
+
+/*--------- index --------END- */
+
+
+/* .svg-icon {
+  width: 20px; 
+  height: auto;
+} */
+
+/*--------- index --------END- */
