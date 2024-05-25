@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyect</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="grid-container">
+    <header class="header"><h1 class="title1">G&C</h1></header>
+<!------------------------------------- Navbar -------------------------------------------GO--->
+    <nav class="navbar">
+      <ul class="navbar-menu">
+        <li class="navbar-item">
+          <a class="title" href="/views/index.html">Home</a>
+        </li>
+        <li class="navbar-item">
+          <a class="title" href="/views/gastronomy.html">Gastronomy</a>
+        </li>
+        <li class="navbar-item">
+          <a class="title" href="/views/cocktails.html">Cocktails</a>
+        </li>
+      </ul>
+    </nav>
+<!------------------------------------- Navbar -------------------------------------------END--->
+
+<!------------------------------------- Sidebar -------------------------------------------GO--->
+    <aside class="sidebar">
+      SIDEBAR <br /><br />
+      <h3>Gastronomy and Cocktails of the World</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officia
+        praesentium iure excepturi magni veritatis laudantium debitis, vel
+        laboriosam incidunt, architecto error. Dolores qui, quibusdam nemo
+        inventore sunt obcaecati quae?
+      </p>
+      <br />
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique,
+        tempore? Suscipit quae laudantium inventore praesentium corrupti numquam
+        commodi ea quis, aspernatur maiores architecto impedit, quo ipsam
+        veritatis nostrum obcaecati doloribus.
+      </p>
+    </aside>
+
+<!------------------------------------- Sidebar -------------------------------------------END--->    
+
+<!------------------------------------- Main -------------------------------------------GO--->
+    <article class="main">
+      MAIN
+      <div class="contentMains">
+        <div>
+          <button onclick="window.location.href='/views/gastronomy.html'">
+            Go to Gastronomy
+          </button>
+          <video
+            class="video-home"
+            autoplay
+            muted
+            loop
+            onclick="window.location.href='/views/gastronomy.html'"
+          >
+            <source src="/assets/food.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div>
+          <button onclick="window.location.href='/views/cocktails.html'">
+            Go to Cocktails
+          </button>
+          <video
+            class="video-home"
+            autoplay
+            muted
+            loop
+            onclick="window.location.href='/views/cocktails.html'">
+            
+            <source src="/assets/cocktails.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+    </article>
+<!------------------------------------- Main -------------------------------------------END--->
+
+<!------------------------------------- Footer -------------------------------------------GO--->
+<footer class="footer">
+        <div>
+        <ul class="navbar-menu-footer">
+            <li class="navbar-item-footer">
+            <a class="title" href="/views/index.html">Home</a>
+            </li>
+            <li class="navbar-item-footer">
+            <a class="title" href="/views/form.html">Contact</a>
+            </li>
+        </ul>
+    </div>
+    </footer>
+<!------------------------------------- Footer -------------------------------------------END--->
+    <script src="/script.js"></script>
+  </body>
+</html>
