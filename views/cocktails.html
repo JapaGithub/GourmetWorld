@@ -16,6 +16,7 @@
     rel="stylesheet"
     />
     <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/assets/icons.png" type="image/x-icon"/>
     </head>
     <body class="grid-container">
 
@@ -25,10 +26,10 @@
     <nav class="navbar">
 
       <!-----Search----GO--->
-      <div class="search-box">
+      <!-- <div class="search-box">
         <input type="text" placeholder="Search...">
         <button><i class="fas fa-search"></i></button>
-      </div>
+      </div> -->
       <!-----Search----END--->
       <ul class="navbar-menu">
         <li class="navbar-item">
@@ -46,102 +47,59 @@
 
     <!------------------------------------- Sidebar -------------------------------------------GO--->
     <aside class="sidebar">
-          <h3 class="title2">Cocktails of the World</h3>
+      <h3 class="title2">Main ingredients</h3>
+        
 
-        <div class="item-sidebar">
-          <img class="img-sidebar" src="/assets/trago.jpg" >
-          <h3>Título de la primera imagen</h3>
-          <p>Descripción de la primera imagen.</p>
+        <div class="recipe-container">
+          <div class="ingredient-button" onclick="getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin')">
+              <img src="https://www.thecocktaildb.com/images/ingredients/Gin.png" alt="Gin" onclick="getCocktails('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin')">
+              <h3></h3>
+              <button id="button_selector">Gin</button>
+          </div>
+          <div class="ingredient-button" onclick="getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=rum')">
+              <img src="https://www.thecocktaildb.com/images/ingredients/Rum.png" alt="Rum" onclick="getCocktails('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=rum')">
+              <button id="button_selector">Rum</button>
+          </div>
+          <div class="ingredient-button" onclick="getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=tequila')">
+              <img src="https://www.thecocktaildb.com/images/ingredients/Tequila.png" alt="Tequila" onclick="getCocktails('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=tequila')">
+              <button id="button_selector">Tequila</button>
+          </div>
+          <div class="ingredient-button" onclick="getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vodka')">
+              <img src="https://www.thecocktaildb.com/images/ingredients/Vodka.png" alt="Vodka" onclick="getCocktails('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vodka')">
+              <button id="button_selector">Vodka</button>
+          </div>
+    
       </div>
-  
-      <div class="item-sidebar">
-          <img class="img-sidebar" src="/assets/trago.jpg" >
-          <h3>Título de la segunda imagen</h3>
-          <p>Descripción de la segunda imagen.</p>
-      </div>
-
-      <div class="item-sidebar">
-        <img class="img-sidebar" src="/assets/trago.jpg" >
-        <h3>Título de la primera imagen</h3>
-        <p>Descripción de la primera imagen.</p>
-    </div>
-
-    <div class="item-sidebar">
-        <img class="img-sidebar" src="/assets/trago.jpg">
-        <h3>Título de la segunda imagen</h3>
-        <p>Descripción de la segunda imagen.</p>
-    </div>
-
-    <div class="item-sidebar">
-      <img  class="img-sidebar" src="/assets/trago.jpg" >
-      <h3>Título de la segunda imagen</h3>
-      <p>Descripción de la segunda imagen.</p>
-  </div>
 
     </aside>
-<!------------------------------------- Sidebar -------------------------------------------END--->  
+<!------------------------------------- Sidebar -------------------------------------------END---> 
 
-    <!------------------------------------- Main -------------------------------------------GO--->
+<!------------------------------------- Main -------------------------------------------GO--->
     <article class="main">
-      <h1 style="color: aquamarine;"> Cocktails</h1>
+      <h1 style="color: aquamarine;">Cocktails</h1>
 
         <!---------------- List-Products ------------GO-->
-        <div class="product"> 
-          <h2>Jack Daniels</h2>
-          <img src="/assets/trago.jpg">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, reprehenderit fugit voluptatum veritatis dignissimos aliquid.
-            Architecto, et! Tenetur, non cumque quae earum aspernatur totam odio laboriosam quidem sunt? Veniam, velit?</p>
-          <button class="like-button" onclick="toggleLike('product1')">Me gusta</button>
-          <p id="like-count-product1">0</p>
+      
+
+    <div id="recipesDiv"></div>
+
+      <div id="modal">
+          <div id="modal-content">
+              <span class="close">&times;</span>
+              <h2 id="modal-title"></h2>
+              <img id="modal-image" src="" alt="">
+              <h3>Ingredientes</h3>
+              <ul id="modal-ingredients"></ul>
+              <p id="modal-instructions"></p>
+          </div>
       </div>
-  
-      <div class="product">
-          <h2>Producto 2</h2>
-          <img src="product2.jpg">
-          <p>Descripción del producto 2</p>
-          <button class="like-button" onclick="toggleLike('product2')">Me gusta</button>
-          <p id="like-count-product2">0</p>
-      </div>
-  
-      <div class="product"> 
-        <h2>Producto 1</h2>
-        <img src="product.jpg">
-        <p>hamburguesa</p>
-        <button class="like-button" onclick="toggleLike('product3')">Me gusta</button>
-        <p id="like-count-product3">0</p>
-    </div>
-  
-    <div class="product">
-        <h2>Producto 2</h2>
-        <img src="product2.jpg">
-        <p>Descripción del producto 2</p>
-        <button class="like-button" onclick="toggleLike('product4')">Me gusta</button>
-        <p id="like-count-product4">0</p>
-    </div>
-  
-    <div class="product"> 
-      <h2>Producto 1</h2>
-      <img src="product.jpg">
-      <p>hamburguesa</p>
-      <button class="like-button" onclick="toggleLike('product5')">Me gusta</button>
-      <p id="like-count-product5">0</p>
-  </div>
-  
-  <div class="product">
-      <h2>Producto 2</h2>
-      <img src="product2.jpg">
-      <p>Descripción del producto 2</p>
-      <button class="like-button" onclick="toggleLike('product6')">Me gusta</button>
-      <p id="like-count-product6">0</p>
-  </div>
-  
-      <!---------------- List-Products ------------END-->
 
     </article>
 <!------------------------------------- Main -------------------------------------------END--->
 
 <!------------------------------------- Footer -------------------------------------------GO--->
     <footer class="footer">
+
       <div>
         <ul class="navbar-menu-footer">
           <li class="navbar-item-footer">
@@ -152,9 +110,8 @@
           </li>
         </ul>
       </div>
-      
     </footer>
 <!------------------------------------- Footer -------------------------------------------END--->
-    <script src="/script.js"></script>
+    <script src="/app.js"></script>
     </body>
 </html>

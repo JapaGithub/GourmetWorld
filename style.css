@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Rock+Salt&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -35,6 +36,16 @@ body {
   .header {
     grid-area: header;
     background-color: #0b5d95;
+  }
+
+  .formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    position: relative; 
+    left: 100%; 
+    width: 150%;
   }
 
 /* --------------NAVBAR---------------GO-- */  
@@ -109,18 +120,20 @@ body {
   margin-bottom: 20px;
   padding: 3%;
   padding-bottom: 0;
-  height: 50%;
+  height: 30%;
   width: 100%;
-
 }
 .recipe-container img {
     height: auto;
-    width: 100%;
+    width: 70%;
   }
-
-  .recipe-container button {
-    height: 3em;
-    width: 100%;
+  .recipe-container img:hover {
+    height: auto;
+    width: 79%;
+    background-image: url('/assets/madera.jpg');
+    background-size:contain; 
+    border-radius: 3%;
+    box-shadow: 3px 3px 9px black;
   }  
 
 .item-sidebar h3 {
@@ -220,11 +233,14 @@ body {
   max-height: 28%;
   min-height: 28%;
   min-width: 32%;
+  box-shadow: 6px 6px 23px black;
+  background-image: url('/assets/madera.jpg');
+  background-size:contain; 
 }
 .product h2 {
   margin-top: 0;
   color: #ccc;
-  font-size:1.5em;
+  font-size:1em;
 }
 
 .product h2:hover {
@@ -236,21 +252,26 @@ body {
   max-width: 60%;
   min-height: 30%;
   height: auto;
-  
 }
 
-.product button {
-  background-color: #0b5d95;
+#button_selector {
+  background-color:#5d593676;
   color: white;
   border-radius: 6px;
-  height: 2em;
-  width: 6em;
-  font-size: large;
-}
+  height: 1.5em;
+  width: 16em;
+  font-size:larger;
+  border: none;
+}  
+
+#button_selector:hover {
+  background-color:#0b9550ab;
+  color: white;
+} 
 
 #modal {
   vertical-align: top;
-  display: inline-block;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -259,9 +280,8 @@ body {
   background: rgba(0, 0, 0, 0.6);
   justify-content: center;
   padding: 1%;
-
- 
 }
+
 #modal img {
   width: 30%;
   height: 30%;
@@ -310,29 +330,6 @@ body {
 
 }
 
-
-/* .product p {
-  margin-bottom: 10px;
-  color: #d1caca;
-
-} */
-
-/* .like-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.like-button:hover {
-  background-color: #0056b3;
-} */
-
-
-
 /*------------ List-Products - END ---------------*/
 
 #index{
@@ -348,55 +345,332 @@ body {
   position: fixed;
   z-index: -1;
   opacity: 0.60;
+} 
 
-}
-.button_video{
-  background-color: #c8c9b3;
-  font-size: 3rem;
-}
-.video-index2{
-  width: 100%;
-  height: 100%;
-}
-
-/*--------- VIDEO--------END- */
-
-/*--------- TITLES --------GO- */
-.title {
-    display: grid;
-    font-family: "Jersey 10 Charted", sans-serif;
-    color: #f5f2f0;
-    background-color: #101315;
-    justify-content: center;
-    font-size: 3em;
-}
-.title:hover{
-  color: #ed424dab;
-  background-color: #331C17;
-}
-
-.title1  {
-    font-family: "Rock Salt", cursive;
-    font-weight: 16em;
-    font-style: normal;
-    color: beige;
+  .button_video{
+    font-family: "Love Ya Like A Sister"; /*------Pablo------*/
+    display: inline-flex; /*------Pablo------*/
+    color: #73deec3b; /*------Pablo------*/
+    background-color: #ffffff00; /*------Pablo------*/
+    border-color: #ffffff00; /*------Pablo------*/
+    font-size: 3.5rem; /*------Pablo------*/
+    width: 100%; /*------Pablo------*/
+    height: 100%; /*------Pablo------*/
+    text-align: start; /*------Pablo------*/
   }
-
-.title2{
-    font-family: "Love Ya Like A Sister", cursive;
-    font-weight: 6em;
-    font-style: normal;
-    color: #352220;
+  .video-index2{
+    width: 100%;
+    height: 100%;
+  }
+  .index2{ /*------Pablo------*/
+    font-size: 1rem; /*------Pablo------*/
+    min-height: 100vh; /*------Pablo------*/
+    padding: 0px; /*------Pablo------*/
+    background-color: black; /*------Pablo------*/
+    opacity: 0.9; /*------Pablo------*/
+    }
+    .container_button_video{ /*------Pablo------*/
+      position: absolute; /*------Pablo------*/
+      width: 60%; /*------Pablo------*/
+      height: 10%; /*------Pablo------*/
+    }
+    .bubutton_video{ /*------Pablo------*/
+      width: 100%; /*------Pablo------*/
+      height: 100%; /*------Pablo------*/
+      opacity: 0 /*------Pablo------*/
+    }
+  
+  /*--------- VIDEO--------END- */
+  
+  /*--------- TITLES --------GO- */
+  .title {
+      display: grid;
+      font-family: "Jersey 10 Charted", sans-serif;
+      color: #f5f2f0;
+      background-color: #101315;
+      justify-content: center;
+      font-size: 3em;
+      text-decoration: none; /*------Pablo------*/
+  }
+  .title:hover{
+    color: #ed424dab;
+    background-color: #331C17;
   }
   
-/*--------- TITLES --------END- */
-
-/*--------- index --------END- */
-
-
-/* .svg-icon {
-  width: 20px; 
-  height: auto;
-} */
-
-/*--------- index --------END- */
+  .title1  {
+      font-family: "Rock Salt", cursive;
+      font-weight: 16em;
+      font-style: normal;
+      color: beige;
+    }
+  
+  .title2{
+      font-family: "Love Ya Like A Sister", cursive;
+      font-weight: 6em;
+      font-style: normal;
+      color: #352220;
+    }
+    
+  /*--------- TITLES --------END- */
+  
+  /*--------- index --------END- */
+  
+  
+  /* .svg-icon {
+    width: 20px; 
+    height: auto;
+  } */
+  
+  /*--------- index --------END- */
+  
+  /* -------- Saludo-Index2 --------GO- */
+  
+  div.vienvenida {
+    display:inline-block;
+    position: relative;
+    width: 1045px;
+    height: 80px;
+  }
+  
+  p.bubutton_video{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  a.icono {
+    list-style: none;
+    width: 1045px;
+    height: 70px;
+    background-color: #ffffff00;
+    text-align: center;
+    line-height: 80px;
+    font-size: 0px;
+    margin: 0 10px;
+    display: block;
+    border-radius: 1%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #33423800;
+  }
+  
+  a.icono {
+    position: relative;
+    color: #262626;
+    transition: .5s;
+  }
+  
+  a.icono:hover {
+    color: #fff;
+    transform: rotateY(360deg);
+  }
+  
+  a.icono:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(60, 114, 175, 0.288);
+    transition: 2.5s;
+  }
+  
+  a.icono:hover:before {
+    top: 0;
+  }
+  
+  /* -------- Saludo-Index2 -------END- */
+  
+  /* -------- Estilos para Contacto -------ON- */
+  
+  .form-container,
+  .message-container {
+    width: 100%;
+    
+    /* Ajusta el ancho de las columnas según tus necesidades */
+  }
+  
+  .contact-form,
+  .message-container {
+    font-family: "Love Ya Like A Sister"; /*------Pablo------*/
+    font-size: 1.5rem;
+    max-width: 1000px;
+    margin: 10;
+    padding: 10px;
+    background-color: rgba(164, 166, 167, 0.514);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+  }
+  .message-container {
+    width: 96%;
+  }
+  
+  input {
+    font-size: 1.2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 40px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  textarea {
+    height: 200px;
+  }
+  
+  .mensaje-imagen {
+    max-width: 80%;
+    /* Ajusta el ancho máximo de la imagen para que se ajuste al contenedor */
+    height: auto;
+    /* Permite que la altura se ajuste automáticamente según el ancho */
+    margin-top: 20px;
+    /* Margen superior para separar la imagen del contenido del mensaje */
+  }
+  
+  .mensajesList {
+    max-width: 800px;
+    /* Ajusta este valor según el ancho deseado */
+    margin: 0 auto;
+    /* Centra el contenedor horizontalmente */
+    padding: 0 30px;
+    /* Agrega un poco de espacio alrededor del contenido */
+  }
+  .form-group label,
+  .form-group input[type="checkbox"] {
+    display: inline;
+  }
+  
+  
+  button[type="submit"] {
+    background-color: rgba(164, 166, 167, 0.514);
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: rgba(164, 166, 167, 0.747);
+  }
+  
+  /* .container {
+    display: flex;
+  } */
+  
+  .form-column {
+    flex: 1;
+    padding-right: 20px;
+    /* Espacio entre columnas */
+  }
+  
+  .contact-column {
+    flex: 1;
+    padding: 20px;
+    margin: 200px auto;
+    justify-content: center;
+    /* Centrado horizontal */
+    align-items: center;
+    /* Centrado vertical */
+    height: 100%;
+    /* Asegura que ocupe toda la altura de su contenedor */
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  /* Estilos autos */
+  section {
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  .container-autos {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .autos {
+    float: left;
+    width: 25%;
+    padding: 20px;
+  }
+  
+  .autos img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .info {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  
+  /* Estilo atracciones */
+  .container-atracciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* Asegura que haya espacio entre los elementos */
+    margin: 20px auto;
+    max-width: 1000px;
+  }
+  
+  .box {
+    width: calc(40% - 20px);
+    /* Ancho del 50% menos el espacio */
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    /* Transición suave para animaciones */
+  }
+  
+  .box:hover {
+    transform: translateY(-5px);
+    /* Efecto de levantamiento al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    /* Sombra suave al pasar el mouse */
+  }
+  
+  .box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .box h2 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .box p {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #666;
+  }

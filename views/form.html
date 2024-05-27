@@ -14,6 +14,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted&display=swap" rel="stylesheet"
         />
         <link rel="stylesheet" href="/style.css" />
+        <link rel="icon" href="/assets/icons.png" type="image/x-icon"/>
     </head>
     <body class="grid-container">
 
@@ -31,7 +32,7 @@
                 <a class="title" href="gastronomy.html">Gastronomy</a>
                 </li>
                 <li class="navbar-item">
-                <a class="title" href="cocktails.html">Cocktails</a>
+                <a class="title" href="cocktails.html" onclick="getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin')">Cocktails</a>
                 </li>
             </ul>
             </div>
@@ -39,26 +40,40 @@
 <!------------------------------------- Navbar -------------------------------------------END--->
 
 <!------------------------------------- Form -------------------------------------------GO--->
-        <h1>Add a New Recipe</h1>
-        <form action="/submit" method="POST"  onsubmit="return validateForm()">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <span id="emailError" class="error"></span><br><br>
-    
-            <label for="recipeImage">Recipe Image:</label>
-            <input type="file" id="recipeImage" name="recipeImage" accept="image/*" required>
-            <span id="imageError" class="error"></span><br><br>
-    
-            <label class="instructions" for="instructions">Instructions for preparation:</label><br>
-            <textarea id="steps" name="steps" rows="4" cols="50" required></textarea>
-            <span id="stepsError" class="error"></span><br><br>
-    
-            <label for="description">Description:</label><br>
-            <textarea id="description" name="description" rows="4" cols="50" required></textarea>
-            <span id="descriptionError" class="error"></span><br><br>
-    
-            <button type="submit">Submit</button>
+<div class="formulario">
+    <div class="form-container">
+        <form class="contact-form" id="formulario" onsubmit="return validarFormulario()">
+            <div class="form-group">
+                <label for="nombre">New Recipe</label>
+                <input type="text" id="nombre" name="nombre">
+            </div>
+            <div class="form-group">
+                <label for="lugar">Ingredients</label>
+                <input type="text" id="lugar" name="lugar">
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Instructions for preparation</label>
+                <textarea id="mensaje" name="mensaje" oninput="actualizarContador()"></textarea>
+                <span id="contador">1000/1000</span>
+            </div>
+            <div>
+                <label for="foto">Foto</label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+            </div>
+            <br><br>
+            <button type="submit" >Enviar</button>
         </form>
+    </div>
+
+    <div class="message-container">
+        <div class="mensajes">
+            <h3>New Recipe</h3>
+            <div id="mensajesList">
+
+            </div>
+        </div>
+    </div>
+</div>
 <!------------------------------------- Form -------------------------------------------END--->
         
 <!------------------------------------- Footer -------------------------------------------GO--->
@@ -78,7 +93,7 @@
         </footer>
 <!------------------------------------- Footer -------------------------------------------END--->      
 
-        <script src="script.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>
 
