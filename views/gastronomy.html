@@ -16,6 +16,7 @@
     rel="stylesheet"
     />
     <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/assets/icons.png" type="image/x-icon"/>
     </head>
     <body class="grid-container">
 
@@ -25,10 +26,10 @@
     <nav class="navbar">
 
       <!-----Search----GO--->
-      <div class="search-box">
+      <!-- <div class="search-box">
         <input type="text" placeholder="Search...">
         <button><i class="fas fa-search"></i></button>
-      </div>
+      </div> -->
       <!-----Search----END--->
 
         <ul class="navbar-menu">
@@ -39,7 +40,7 @@
           <a class="title" href="/views/gastronomy.html">Gastronomy</a>
           </li>
           <li class="navbar-item">
-          <a class="title" href="/views/cocktails.html">Cocktails</a>
+          <a class="title" href="/views/cocktails.html" onclick="getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin')">Cocktails</a>
           </li>
       </ul>
     </nav>
@@ -47,37 +48,33 @@
 
 <!------------------------------------- Sidebar -------------------------------------------GO--->
     <aside class="sidebar">
-      <h3 class="title2">Gastronomy of the World</h3>
+      <h3 class="title2">Main ingredients</h3>
         
         <!-- <div id="recipe-container"></div> -->
 
         <div class="recipe-container">
           <div class="ingredient-button" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken')">
-              <img src="https://www.themealdb.com/images/ingredients/Chicken.png" alt="Chicken">
+              <img src="https://www.themealdb.com/images/ingredients/Chicken.png" alt="Chicken" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken')">
               <h3></h3>
-              <button>Chicken</button>
+              <button id="button_selector">Chicken</button>
           </div>
           <div class="ingredient-button" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Beef')">
-              <img src="https://www.themealdb.com/images/ingredients/Beef.png" alt="Beef">
-              <button>Beef</button>
+              <img src="https://www.themealdb.com/images/ingredients/Beef.png" alt="Beef" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Beef')">
+              <button id="button_selector">Beef</button>
           </div>
           <div class="ingredient-button" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Pork')">
-              <img src="https://www.themealdb.com/images/ingredients/Pork.png" alt="Pork">
-              <button>Pork</button>
+              <img src="https://www.themealdb.com/images/ingredients/Pork.png" alt="Pork" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Pork')">
+              <button id="button_selector">Pork</button>
           </div>
           <div class="ingredient-button" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Salmon')">
-              <img src="https://www.themealdb.com/images/ingredients/Salmon.png" alt="Salmon">
-              <button>Salmon</button>
+              <img src="https://www.themealdb.com/images/ingredients/Salmon.png" alt="Salmon" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Salmon')">
+              <button id="button_selector">Salmon</button>
           </div>
           <!-- <div class="ingredient-button" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?c=Pasta')">
             <img src="https://www.themealdb.com/images/media/meals/usywpp1511189717.jpg" alt="Pasta">
             <button>Pasta</button>
-          </div> -->
-
-          
+          </div> -->     
       </div>
-
-        
 
     </aside>
 <!------------------------------------- Sidebar -------------------------------------------END---> 
@@ -87,7 +84,7 @@
       <h1 style="color: aquamarine;">Gastronomy</h1>
 
         <!---------------- List-Products ------------GO-->
-      
+      <div class="container"></div>
       <div id="mealsDiv"></div>
 
     <div id="recipesDiv"></div>
@@ -102,19 +99,6 @@
               <p id="modal-instructions"></p>
           </div>
       </div>
-
-
-  <!-- --GO--
-  <ul id="lista-categorias"></ul>  
-    <h2>Hamburguesa</h2>
-        <img src="/assets/hamburguesa.jpg">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, reprehenderit fugit voluptatum veritatis dignissimos aliquid.
-          Architecto, et! Tenetur, non cumque quae earum aspernatur totam odio laboriosam quidem sunt? Veniam, velit?</p>
-        <button class="like-button" onclick="toggleLike('product1')">Me gusta</button>
-        <p id="like-count-product1">0</p>
-    </div>
-
-  --------------- List-Products ------------END-->
 
     </article>
 <!------------------------------------- Main -------------------------------------------END--->
@@ -134,6 +118,6 @@
       </div>
     </footer>
 <!------------------------------------- Footer -------------------------------------------END--->
-    <script src="/app1.js"></script>
+    <script src="/app.js"></script>
     </body>
 </html>
