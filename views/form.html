@@ -14,11 +14,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted&display=swap" rel="stylesheet"
         />
         <link rel="stylesheet" href="/style.css" />
-        <link rel="icon" href="/assets/icons.png" type="image/x-icon"/>
+        <link rel="icon" type="image/x-icon" href="/assets/img/logo.png">
     </head>
     <body class="grid-container">
 
-        <header class="header"><h1 class="title1">G&C</h1></header>
+        <header class="header"><img src="/assets/img/logo.png" alt="Logo" class="logo"></header>
         
 <!------------------------------------- Navbar -------------------------------------------GO--->
         <nav class="navbar"> 
@@ -26,53 +26,71 @@
             <div class="">
               <ul class="navbar-menu">
                 <li class="navbar-item">
-                <a class="title" href="index.html">Home</a>
+                <a class="title" href="home.html">Home</a>
                 </li>
                 <li class="navbar-item">
                 <a class="title" href="gastronomy.html">Gastronomy</a>
                 </li>
                 <li class="navbar-item">
-                <a class="title" href="cocktails.html" onclick="getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin')">Cocktails</a>
+                <a class="title" href="cocktails.html">Cocktails</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="title" href="/views/form.html">Contact</a>
                 </li>
             </ul>
             </div>
         </nav>
 <!------------------------------------- Navbar -------------------------------------------END--->
 
+<aside class="form_sidebar">
+</aside>
+
 <!------------------------------------- Form -------------------------------------------GO--->
-<div class="formulario">
-    <div class="form-container">
-        <form class="contact-form" id="formulario" onsubmit="return validarFormulario()">
-            <div class="form-group">
-                <label for="nombre">New Recipe</label>
-                <input type="text" id="nombre" name="nombre">
-            </div>
-            <div class="form-group">
-                <label for="lugar">Ingredients</label>
-                <input type="text" id="lugar" name="lugar">
-            </div>
-            <div class="form-group">
-                <label for="mensaje">Instructions for preparation</label>
-                <textarea id="mensaje" name="mensaje" oninput="actualizarContador()"></textarea>
-                <span id="contador">1000/1000</span>
-            </div>
-            <div>
-                <label for="foto">Foto</label>
-                <input type="file" id="foto" name="foto" accept="image/*">
-            </div>
-            <br><br>
-            <button type="submit" >Enviar</button>
-        </form>
+
+
+<!------------------------------------- Main -------------------------------------------GO--->
+<article class="main" id="mainHome">
+
+    <div class="formulario">
+
+        <div class="form-container">
+            <form id="formulario">
+
+                <div class="form-group">
+                    <label for="nombre">New Recipe</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Recipe Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ingredients">Ingredients</label>
+                    <input type="text" id="ingredients" name="ingredients" placeholder="Ingredients" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Instructions for preparation</label>
+                    <textarea id="mensaje" name="mensaje" placeholder="Preparation" maxlength="1000" oninput="actualizarContador()" required></textarea>
+                    <div id="contador">1000/1000</div>
+                </div>
+
+                <div>
+                    <label for="foto">Foto</label>
+                    <input type="file" id="foto" name="foto" accept="image/jpeg, image/png, video/mp4" required>
+                </div>
+                <br><br>
+                <button id="button_form" type="submit" >Send</button>
+
+            </form>
+        </div>
+
+        <div id="mensajesList"></div>
+
     </div>
 
-    <div class="message-container">
-        <div class="mensajes">
-            <h3>New Recipe</h3>
-            <div id="mensajesList">
-            </div>
-        </div>
-    </div>
-</div>
+
+</article>
+<!------------------------------------- Main -------------------------------------------END--->
+
+
 
 <!------------------------------------- Form -------------------------------------------END--->
         
@@ -93,7 +111,7 @@
         </footer>
 <!------------------------------------- Footer -------------------------------------------END--->      
 
-        <script src="app.js"></script>
+        <script src="/app.js"></script>
     </body>
 </html>
 

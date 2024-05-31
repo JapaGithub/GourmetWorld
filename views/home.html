@@ -17,11 +17,11 @@
       href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/style.css" />
-    <link rel="icon" href="/assets/icons.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="/style.css" /> 
+    <link rel="icon" type="image/x-icon" href="/assets/img/logo.png">
   </head>
   <body class="grid-container">
-    <header class="header"><h1 class="title1">Gourmet World</h1></header>
+    <header class="header"><img src="/assets/img/logo.png" alt="Logo" class="logo"></header>
 <!------------------------------------- Navbar -------------------------------------------GO--->
     <nav class="navbar">
       <ul class="navbar-menu">
@@ -34,55 +34,79 @@
         <li class="navbar-item">
           <a class="title" href="/views/cocktails.html" >Cocktails</a>
         </li>
+        <li class="navbar-item">
+          <a class="title" href="/views/form.html">Contact</a>
+      </li>
       </ul>
     </nav>
 <!------------------------------------- Navbar -------------------------------------------END--->
 
 <!------------------------------------- Sidebar -------------------------------------------GO--->
-    <aside class="sidebar">
-      SIDEBAR <br /><br />
-      <h3>Gastronomy and Cocktails of the World</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse officia
-        praesentium iure excepturi magni veritatis laudantium debitis, vel
-        laboriosam incidunt, architecto error. Dolores qui, quibusdam nemo
-        inventore sunt obcaecati quae?
+    <aside class="sidebar_home">
+ 
+      <h2 class="title1" id="title_sidebar">Gourmet World</h2>
+      <p class="p_sidebar">
+          Este proyecto es parte del curso <strong>Codo a Codo</strong>. La aplicación permite a los usuarios explorar recetas gastronómicas y cócteles de manera sencilla. Aquí tienes una breve descripción de las funcionalidades principales:
+      </p><br>
+      <h3 class="title1" id="title_sidebar">Página de Inicio</h3>
+      <p class="p_sidebar">
+          Muestra una receta y un cóctel aleatorios al cargar la página para inspirarte con nuevas ideas culinarias y de bebidas.
+      </p><br>
+      <h3 class="title1" id="title_sidebar">Sección de Gastronomía</h3>
+      <p class="p_sidebar">
+          Explora diversas recetas a base de pollo. Cada receta incluye una imagen, descripción y un botón para ver más detalles.
+      </p><br>
+      <h3 class="title1" id="title_sidebar">Sección de Cócteles</h3>
+      <p class="p_sidebar">
+          Descubre cócteles basados en ginebra. Cada cóctel se presenta con una imagen, descripción y un botón para obtener más información.
+      </p><br>
+      <h3 class="title1" id="title_sidebar">Modal de Detalles</h3>
+      <p class="p_sidebar">
+          Al hacer clic en "Ver más", se abre una ventana modal que muestra detalles adicionales de la receta o cóctel seleccionado, incluyendo ingredientes y pasos de preparación.
+      </p><br>
+      <h3 lass="title1" id="title_sidebar">Tecnologías Utilizadas</h3>
+      <p class="p_sidebar">
+          <strong>HTML</strong> y <strong>CSS</strong> para la estructura y el estilo de la página.<br>
+          <strong>JavaScript</strong> para la lógica de la aplicación y consumo de APIs.<br>
+          <strong>Fetch API</strong> para obtener datos de <a class="a_sidebar" href="https://www.themealdb.com" target="_blank">TheMealDB</a> y <a class="a_sidebar" href="https://www.thecocktaildb.com" target="_blank">TheCocktailDB</a>.
       </p>
-      <br />
-      <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique,
-        tempore? Suscipit quae laudantium inventore praesentium corrupti numquam
-        commodi ea quis, aspernatur maiores architecto impedit, quo ipsam
-        veritatis nostrum obcaecati doloribus.
-      </p>
+      <div class="imgTecnology">
+        <img class="itemImgTecnology" src="/assets/img/html5.svg" alt="html">
+        <img class="itemImgTecnology" src="/assets/img/css3.svg" alt="css">
+        <img class="itemImgTecnology" src="/assets/img/javascript.svg" alt="javascript">
+        <img class="itemImgTecnology" src="/assets/img/github.svg" alt="github">
+        <img class="itemImgTecnology" src="/assets/img/visualstudiocode.svg" alt="visualstudiocode">
+      </div>
+
+
     </aside>
 
 <!------------------------------------- Sidebar -------------------------------------------END--->    
 
 <!------------------------------------- Main -------------------------------------------GO--->
-    <article class="main">
-    
-      <div class="contentMains">
-        <div>
-          <button onclick="window.location.href='/views/gastronomy.html'">
-            Go to Gastronomy
-          </button>
-          <video
+    <article class="main" id="mainHome">
+
+    <div class="contentMainsHome">
+
+      <div id="home" class="contentMains">
+        <div id="randomMealDiv" onclick="window.location.href='/views/gastronomy.html'"></div>
+      </div>
+
+      <div id="home" class="contentMains">          
+        <div id="randomDrinkDiv" onclick="window.location.href='/views/cocktails.html'"></div>
+      </div>
+      
+
+            <!-- <video
             class="video-home"
             autoplay
             muted
             loop
             onclick="window.location.href='/views/gastronomy.html'"
-          >
-            <source src="/assets/food.mp4" type="video/mp4" />
-          </video>
-        </div>
-
-        <div>
-          <button onclick="window.location.href='/views/cocktails.html'">
-            Go to Cocktails
-          </button>
-          <video
+          ><source src="/assets/food.mp4" type="video/mp4" />
+          </video>            -->
+          
+          <!-- <video
             class="video-home"
             autoplay
             muted
@@ -90,25 +114,30 @@
             onclick="window.location.href='/views/cocktails.html'">
             
             <source src="/assets/cocktails.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </div>
+          </video> -->
 
-      
+          <!-- <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'></div></div> -->
+
+
     </article>
+
 <!------------------------------------- Main -------------------------------------------END--->
 
 <!------------------------------------- Footer -------------------------------------------GO--->
 <footer class="footer">
-        <div>
-        <ul class="navbar-menu-footer">
-            <li class="navbar-item-footer">
+
+ 
+        
+  
+    <div>
+      <ul class="navbar-menu-footer">
+          <li class="navbar-item-footer">
             <a class="title" href="/views/index.html">Home</a>
-            </li>
-            <li class="navbar-item-footer">
+          </li>
+          <li class="navbar-item-footer">
             <a class="title" href="/views/form.html">Contact</a>
-            </li>
-        </ul>
+          </li>
+      </ul>
     </div>
     </footer>
 <!------------------------------------- Footer -------------------------------------------END--->

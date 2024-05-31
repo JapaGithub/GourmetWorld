@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Khula:700');
 
 * {
   box-sizing: border-box;
@@ -28,9 +29,9 @@ body {
   gap: 10px;
   grid-template: 
   "header" 10%
-  "navbar"15%
+  "navbar"10%
   "main" auto
-  "sidebar" 25%
+  "sidebar" 30% 
   "footer" 10%;
 
   .header {
@@ -39,23 +40,24 @@ body {
   }
 
   .formulario {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 200px;
-    position: relative; 
-    left: 100%; 
-    width: 150%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 100%;
+    width: 100%;
+    height: auto; 
   }
-
+ 
+.logoP{ 
+  background-image: url('/assets/img/logo.png');
+}
 /* --------------NAVBAR---------------GO-- */  
   .navbar {
     grid-area: navbar;
     display: grid;
     grid-template-columns: 3fr auto 1fr;
     padding: 10px 20px; 
-    background-image: url('/assets/madera.jpg');
-    background-size:contain;    
+    background-image: url('/assets/img/tableColors.jpg');
+    background-size:contain;
   }
   .navbar-menu {
     list-style-type: none;
@@ -74,13 +76,6 @@ body {
     margin-left: 0;
   }
 
-  .navbar-link {
-    color: white;   
-    padding: 3%;
-  }
-  .navbar-item:hover{
-    background-color: green;
-  }
     /* --------search-------GO--- */
   .search-box {
     position: relative;
@@ -109,12 +104,46 @@ body {
     
     
 }
-    /* --------search-------END--- */
+/* --------search-------END--- */
+
+/* --------------HEADER--------------END--- */
+.logo{
+  position:relative;
+  width: 28%;
+  height: auto;
+  background-color: #cacccdb6;
+  border-radius: 23px;
+}
+header{
+  background-image: url('/assets/img/madera.jpg');
+  background-size:contain; 
+}
+/* --------------HEADER--------------END--- */   
+
 
 /* --------------NAVBAR--------------END--- */
 
 
 /* --------------SIDEBAR---------------GO-- */
+.sidebar_home{
+  background-image: url('/assets/img/tableL.jpg');
+  background-size:contain; 
+  
+}
+.imgTecnology{
+padding-top: 6%;
+}
+
+.itemImgTecnology{
+  width: 13%;
+  height: auto;
+}
+
+.itemImgTecnology:hover{
+  width: 15%;
+  height: auto;
+}
+
 
 .recipe-container {
   margin-bottom: 20px;
@@ -122,6 +151,7 @@ body {
   padding-bottom: 0;
   height: 30%;
   width: 100%;
+  
 }
 .recipe-container img {
     height: auto;
@@ -130,7 +160,7 @@ body {
   .recipe-container img:hover {
     height: auto;
     width: 79%;
-    background-image: url('/assets/madera.jpg');
+    background-image: url('/assets/img/madera.jpg');
     background-size:contain; 
     border-radius: 3%;
     box-shadow: 3px 3px 9px black;
@@ -143,21 +173,90 @@ body {
 .sidebar {
   grid-area: sidebar;
   background-color: #c8c9b3;
-
+  background-image: url('/assets/img/tableL_1.jpg');
+  background-size:contain;
+  opacity: 90%; 
 }
+.p_sidebar{
+  color: rgb(12, 12, 12);
+}
+
+.a_sidebar{
+  color: orangered;
+}
+
+.form_sidebar{
+  background-image: url('/assets/img/charles.jpg');
+  background-size:cover; 
+}
+
 /* --------------SIDEBAR--------------END-- */
 
 /* --------------MAIN--------------GO-- */
 
-  .main {
+.main {
   grid-area: main;
-  background-color: #403c3c;
+  background-image: url('/assets/img/tableL_1.jpg');
+  background-size:contain; 
+  
   }
+#mainHome {
+    background-image: url('/assets/img/pexels-anniroenkae-2457278.jpg');
+    background-size:cover; 
+    
+}
+
+.contentMainsHome{
+  display: grid;
+  padding: 3%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+}
+
+.imgRandom{
+  display: grid;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s;
+  border-radius: 1em;
+  box-shadow: 3px 3px 9px black;
+}
+.imgRandom:hover{
+  background-color: #0e1012ee;
+  box-shadow: 6px 6px 19px black;
+}
 
 .video-home{
-  width: 40%; 
-  height: 20%;
+  width: 90%; 
+  height: auto;
 }
+    /* ---MAIN HOME TEXT---GO-- */
+
+    .hidden {
+      opacity:0;
+    }
+    .console-container { 
+      font-family:Khula;
+      font-size:4em;
+      text-align:center;
+      height:200px;
+      width:600px;
+      display:block;
+      position:absolute;
+      color:white;
+      top:0;
+      bottom:0;
+      left:0;
+      right:0;
+      margin:auto;
+    }
+    .console-underscore {
+      display:inline-block;
+      position:relative;
+      top:-0.14em;
+      left:10px;
+    } 
+    /* ---MAIN HOME TEXT---END-- */
 
 /* --------------MAIN--------------END-- */
 
@@ -165,22 +264,22 @@ body {
 
 .footer {
   grid-area: footer;
-  background-image: url('/assets/madera.jpg');
-  background-size:contain;
-  background-position: center;
+  background-image: url('/assets/img/tableColors.jpg');
+  
+  
 
   }
   @media (min-width:768px) {
     grid-template: 
-      "header navbar" 50px
-      "header navbar" 50px
+      "header navbar" 100px
+      "header navbar" 40px
       "sidebar main" auto 
       "footer footer" 60px/
       300px auto;
   }
   @media (min-width:992px) {
     grid-template: 
-      "header navbar navbar" 90px
+      "header navbar navbar" 100px
       "sidebar main main" auto
       "footer footer footer" 66px /
       360px auto;
@@ -234,7 +333,7 @@ body {
   min-height: 28%;
   min-width: 32%;
   box-shadow: 6px 6px 23px black;
-  background-image: url('/assets/madera.jpg');
+  background-image: url('/assets/img/madera.jpg');
   background-size:contain; 
 }
 .product h2 {
@@ -254,6 +353,7 @@ body {
   height: auto;
 }
 
+/*--------- Button -------GO----*/
 #button_selector {
   background-color:#5d593676;
   color: white;
@@ -265,6 +365,18 @@ body {
 }  
 
 #button_selector:hover {
+  background-color:#0b9550ab;
+  color: white;
+} 
+#button_form {
+  background-color:#5d593676;
+  color: white;
+  border-radius: 6px;
+  height: 1.5em;
+  width: 9em;
+  font-size:larger;
+} 
+#button_form:hover {
   background-color:#0b9550ab;
   color: white;
 } 
@@ -281,7 +393,7 @@ body {
   justify-content: center;
   padding: 1%;
 }
-
+/*--------- Button -------END----*/
 #modal img {
   width: 30%;
   height: 30%;
@@ -346,6 +458,24 @@ body {
   z-index: -1;
   opacity: 0.60;
 } 
+.iframe{
+  width: 46%;
+  height: 600px;
+  border-radius: 6px;
+  box-shadow: 6px 6px 19px black;
+  opacity: 0.39;
+}
+
+#index_content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: for a semi-transparent background */
+  border-radius: 10px;
+}
 
   .button_video{
     font-family: "Love Ya Like A Sister"; /*------Pablo------*/
@@ -386,15 +516,15 @@ body {
   .title {
       display: grid;
       font-family: "Jersey 10 Charted", sans-serif;
-      color: #f5f2f0;
-      background-color: #101315;
+      color: #101315;
+      background-color: #D1CABB;
       justify-content: center;
       font-size: 3em;
       text-decoration: none; /*------Pablo------*/
   }
   .title:hover{
-    color: #ed424dab;
-    background-color: #331C17;
+    color: #D1CABB;
+    background-color: #2A1711;
   }
   
   .title1  {
@@ -410,20 +540,15 @@ body {
       font-style: normal;
       color: #352220;
     }
+
+  #title_sidebar{
+    color: #0b5d95;
+
+  }
     
   /*--------- TITLES --------END- */
   
-  /*--------- index --------END- */
-  
-  
-  /* .svg-icon {
-    width: 20px; 
-    height: auto;
-  } */
-  
-  /*--------- index --------END- */
-  
-  /* -------- Saludo-Index2 --------GO- */
+  /* -------- Saludo-Index --------GO- */
   
   div.vienvenida {
     display:inline-block;
@@ -457,12 +582,11 @@ body {
   a.icono {
     position: relative;
     color: #262626;
-    transition: .5s;
+    transition: 1s;
   }
   
   a.icono:hover {
     color: #fff;
-    transform: rotateY(360deg);
   }
   
   a.icono:before {
@@ -480,32 +604,35 @@ body {
     top: 0;
   }
   
-  /* -------- Saludo-Index2 -------END- */
+  /* -------- Saludo-Index -------END- */
   
   /* -------- Estilos para Contacto -------ON- */
   
-  .form-container,
-  .message-container {
-    width: 100%;
-    
-    /* Ajusta el ancho de las columnas según tus necesidades */
-  }
   
-  .contact-form,
+  .form-container{
+    font-family: "Love Ya Like A Sister"; /*------Pablo------*/
+    font-size: 1.5rem;
+    max-width: 60%;
+    margin: 10;
+    padding: 10px;
+    background-color: rgba(164, 166, 167, 0.627);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+  }
+
   .message-container {
     font-family: "Love Ya Like A Sister"; /*------Pablo------*/
     font-size: 1.5rem;
-    max-width: 1000px;
+    max-width: 100%;
     margin: 10;
     padding: 10px;
-    background-color: rgba(164, 166, 167, 0.514);
+    background-color: rgba(70, 157, 125, 0.627);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-left: 10px;
+    
   }
-  .message-container {
-    width: 96%;
-  }
+
   
   input {
     font-size: 1.2rem;
@@ -525,7 +652,7 @@ body {
   input[type="email"],
   textarea {
     width: 100%; 
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -585,7 +712,7 @@ body {
   .contact-column {
     flex: 1;
     padding: 20px;
-    margin: 200px auto;
+    margin: 20px auto;
     justify-content: center;
     /* Centrado horizontal */
     align-items: center;
@@ -674,3 +801,6 @@ body {
     font-size: 16px;
     color: #666;
   }
+  
+
+  
