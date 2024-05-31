@@ -16,12 +16,12 @@
     rel="stylesheet"
     />
     <link rel="stylesheet" href="/style.css" />
-    <link rel="icon" href="/assets/icons.png" type="image/x-icon"/>
+    <link rel="icon" type="image/x-icon" href="/assets/img/logo.png">
     </head>
-    <body class="grid-container">
+    <body class="grid-container" id="gastronomy">
 
 
-    <header class="header"><h1 class="title1">G&C</h1></header>
+    <header class="header"><img src="/assets/img/logo.png" alt="Logo" class="logo"></header>
 <!------------------------------------- Navbar -------------------------------------------GO--->
     <nav class="navbar">
 
@@ -40,40 +40,39 @@
           <a class="title" href="/views/gastronomy.html">Gastronomy</a>
           </li>
           <li class="navbar-item">
-          <a class="title" href="/views/cocktails.html" onclick="getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin')">Cocktails</a>
+          <a class="title" href="/views/cocktails.html">Cocktails</a>
           </li>
+          <li class="navbar-item">
+            <a class="title" href="/views/form.html">Contact</a>
+        </li>
       </ul>
     </nav>
 <!------------------------------------- Navbar -------------------------------------------END--->
 
 <!------------------------------------- Sidebar -------------------------------------------GO--->
     <aside class="sidebar">
-      <h3 class="title2">Main ingredients</h3>
+      <h2 class="title2">Main ingredients</h2>
         
         <!-- <div id="recipe-container"></div> -->
 
         <div class="recipe-container">
-          <div class="ingredient-button" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken')">
+          <div class="ingredient-button" onclick="fetchData('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken', 'meal')">
               <img src="https://www.themealdb.com/images/ingredients/Chicken.png" alt="Chicken" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken')">
-              <h3></h3>
               <button id="button_selector">Chicken</button>
           </div>
-          <div class="ingredient-button" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Beef')">
+          <div class="ingredient-button" onclick="fetchData('https://www.themealdb.com/api/json/v1/1/filter.php?i=Beef', 'meal')">
               <img src="https://www.themealdb.com/images/ingredients/Beef.png" alt="Beef" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Beef')">
               <button id="button_selector">Beef</button>
           </div>
-          <div class="ingredient-button" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Pork')">
+          <div class="ingredient-button" onclick="fetchData('https://www.themealdb.com/api/json/v1/1/filter.php?i=Pork', 'meal')">
               <img src="https://www.themealdb.com/images/ingredients/Pork.png" alt="Pork" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Pork')">
               <button id="button_selector">Pork</button>
           </div>
-          <div class="ingredient-button" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Salmon')">
+          <div class="ingredient-button" onclick="fetchData('https://www.themealdb.com/api/json/v1/1/filter.php?i=Salmon', 'meal')">
               <img src="https://www.themealdb.com/images/ingredients/Salmon.png" alt="Salmon" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Salmon')">
               <button id="button_selector">Salmon</button>
           </div>
-          <!-- <div class="ingredient-button" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?c=Pasta')">
-            <img src="https://www.themealdb.com/images/media/meals/usywpp1511189717.jpg" alt="Pasta">
-            <button>Pasta</button>
-          </div> -->     
+
       </div>
 
     </aside>
@@ -81,7 +80,7 @@
 
 <!------------------------------------- Main -------------------------------------------GO--->
     <article class="main">
-      <h1 style="color: aquamarine;">Gastronomy</h1>
+      
 
         <!---------------- List-Products ------------GO-->
       <div class="container"></div>

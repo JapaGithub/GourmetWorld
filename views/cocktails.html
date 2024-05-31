@@ -16,12 +16,12 @@
     rel="stylesheet"
     />
     <link rel="stylesheet" href="/style.css" />
-    <link rel="icon" href="/assets/icons.png" type="image/x-icon"/>
+    <link rel="icon" type="image/x-icon" href="/assets/img/logo.png">
     </head>
-    <body class="grid-container">
+    <body class="grid-container" id="cocktails">
 
 
-    <header class="header"><h1 class="title1">G&C</h1></header>
+    <header class="header"><img src="/assets/img/logo.png" alt="Logo" class="logo"></header>
 <!------------------------------------- Navbar -------------------------------------------GO--->
     <nav class="navbar">
 
@@ -41,30 +41,32 @@
         <li class="navbar-item">
         <a class="title" href="/views/cocktails.html">Cocktails</a>
         </li>
+        <li class="navbar-item">
+          <a class="title" href="/views/form.html">Contact</a>
+      </li>
     </ul>
     </nav>
 <!------------------------------------- Navbar -------------------------------------------END--->
 
     <!------------------------------------- Sidebar -------------------------------------------GO--->
-    <aside class="sidebar">
-      <h3 class="title2">Main ingredients</h3>
-        
+    <aside class="sidebar">     
+      <h2 class="title2">Main ingredients</h2>   
 
         <div class="recipe-container">
-          <div class="ingredient-button" onclick="getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin')">
+          <div class="ingredient-button" onclick="fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin', 'drink')">
               <img src="https://www.thecocktaildb.com/images/ingredients/Gin.png" alt="Gin" onclick="getCocktails('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin')">
               <h3></h3>
               <button id="button_selector">Gin</button>
           </div>
-          <div class="ingredient-button" onclick="getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=rum')">
+          <div class="ingredient-button" onclick="fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=rum', 'drink')">
               <img src="https://www.thecocktaildb.com/images/ingredients/Rum.png" alt="Rum" onclick="getCocktails('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=rum')">
               <button id="button_selector">Rum</button>
           </div>
-          <div class="ingredient-button" onclick="getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=tequila')">
+          <div class="ingredient-button" onclick="fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=tequila', 'drink')">
               <img src="https://www.thecocktaildb.com/images/ingredients/Tequila.png" alt="Tequila" onclick="getCocktails('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=tequila')">
               <button id="button_selector">Tequila</button>
           </div>
-          <div class="ingredient-button" onclick="getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vodka')">
+          <div class="ingredient-button" onclick="fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vodka', 'drink')">
               <img src="https://www.thecocktaildb.com/images/ingredients/Vodka.png" alt="Vodka" onclick="getCocktails('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vodka')">
               <button id="button_selector">Vodka</button>
           </div>

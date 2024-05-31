@@ -1,21 +1,108 @@
-document.addEventListener('DOMContentLoaded', () => getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken'));
-document.addEventListener('DOMContentLoaded', () => getDrinks('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin'));
+// ------------------- Get URL from Pages ------------------- GO ---
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('home')) {
+        const mealRandomUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
+        const drinkRandomUrl = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
+        fetchRandomData(mealRandomUrl, drinkRandomUrl);
+    }
 
-// ------------------- Gastronomy ------------------- GO ---
+    if (document.getElementById('gastronomy')) {
+        const mealUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken';
+        fetchData(mealUrl, 'meal');
+    }
 
-async function getMeals(url) {
+    if (document.getElementById('cocktails')) {
+        const drinkUrl = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin';
+        fetchData(drinkUrl, 'drink');
+    }
+
+    const formulario = document.getElementById('formulario');
+    if (formulario) {
+        formulario.addEventListener('submit', function(event) {
+            if (!validarFormulario()) {
+                event.preventDefault(); // Evitar el envío del formulario si la validación falla
+            } else {
+                event.preventDefault(); // Evitar el comportamiento predeterminado de enviar el formulario
+                publicarMensaje(); // Llamar a la función para publicar el mensaje
+            }
+        });
+    }   
+    
+});
+// ------------------- Get URL from Pages ------------------- END ---
+
+
+// ------------------- Get Data Home  ------------------- GO ---
+async function fetchRandomData(mealRandomUrl, drinkRandomUrl) {
+    try {
+        const [mealRandomResponse, drinkRandomResponse] = await Promise.all([
+            fetch(mealRandomUrl),
+            fetch(drinkRandomUrl)
+        ]);
+
+        if (!mealRandomResponse.ok || !drinkRandomResponse.ok) {
+            throw new Error('Error en la petición de las APIs');
+        }
+
+        const mealRandomData = await mealRandomResponse.json();
+        const drinkRandomData = await drinkRandomResponse.json();
+
+        printRandomMeal(mealRandomData.meals[0]);
+        printRandomDrink(drinkRandomData.drinks[0]);
+
+    } catch (error) {
+        console.log('Error:', error);
+    }
+}
+// ------------------- Get Data Home ------------------- END ---
+
+
+// ------------------- Gastronomy & Coctktels Random ------------------- GO ---
+function printRandomMeal(item) {
+    const dataContainer = document.getElementById('randomMealDiv');
+    dataContainer.innerHTML = ''; 
+    const randomMealDiv = document.createElement('div');
+    randomMealDiv.classList.add('productRandom');
+    randomMealDiv.innerHTML = `
+        <img class="imgRandom" src="${item.strMealThumb}" alt="${item.strMeal}">
+    `;
+    dataContainer.appendChild(randomMealDiv);
+}
+
+function printRandomDrink(item) {
+    const dataContainer = document.getElementById('randomDrinkDiv');
+    dataContainer.innerHTML = ''; // Clear the container
+    const randomDrinkDiv = document.createElement('div');
+    randomDrinkDiv.classList.add('productRandom');
+    randomDrinkDiv.innerHTML = `
+        <img class="imgRandom" src="${item.strDrinkThumb}" alt="${item.strDrink}">
+        
+    `;
+    dataContainer.appendChild(randomDrinkDiv);
+}
+// ------------------- Gastronomy & Coctktels Random ------------------- END ---
+
+// ------------------- Get Data Pages ------------------- GO ---
+async function fetchData(url, type) {
     try {
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error('Error en la petición');
         }
         const data = await response.json();
-        printMeals(data.meals);
+        if (type === 'meal') {
+            printMeals(data.meals);
+        } else {
+            printDrinks(data.drinks);
+        }
     } catch (error) {
         console.log('Error:', error);
     }
 }
+// ------------------- Get Data Pages ------------------- END ---
 
+
+// ------------------- Gastronomy ------------------- GO ---
 function printMeals(meals) {
     const dataContainer = document.getElementById('recipesDiv');
     dataContainer.innerHTML = '';
@@ -32,20 +119,8 @@ function printMeals(meals) {
 }
 // ------------------- Gastronomy ------------------- END ---
 
-// ------------------- Cocktels ------------------- GO ---
-async function getDrinks(url) {
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error('Error en la petición');
-        }
-        const data = await response.json();
-        printDrinks(data.drinks);
-    } catch (error) {
-        console.log('Error:', error);
-    }
-}
 
+// ------------------- Cocktels ------------------- GO ---
 function printDrinks(drinks) {
     const dataContainer = document.getElementById('recipesDiv');
     dataContainer.innerHTML = '';
@@ -62,8 +137,8 @@ function printDrinks(drinks) {
 }
 // ------------------- Cocktels ------------------- END ---
 
-// ------------------- Modal ------------------- GO ---
 
+// ------------------- Details Modal ------------------- GO ---
 async function showDetails(id, type) {
     let detailsUrl;
     if (type === 'meal') {
@@ -101,9 +176,9 @@ async function showDetails(id, type) {
     }
 }
 
-document.querySelector('.close').addEventListener('click', () => {
-    document.getElementById('modal').style.display = 'none';
-});
+// document.querySelector('.close').addEventListener('click', () => {
+//     document.getElementById('modal').style.display = 'none';
+// });
 
 window.onclick = function(event) {
     const modal = document.getElementById('modal');
@@ -111,98 +186,151 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+// ------------------- Details Modal ------------------- END ---
 
-// ------------------- Modal ------------------- END ---
+// ------------------- TEXT MAIN ------------------- GO ---
+// function([string1, string2],target id,[color1,color2])    
+// consoleText(['Hello World.', 'Console Text', 'Made with Love.'], 'text', ['black', 'rebeccapurple', 'lightblue']);
 
-// ------------------- Formulario ------------------- GO --- 
+// function consoleText(words, id, colors) {
+//   if (colors === undefined) colors = ['#fff'];
+//   var visible = true;
+//   var con = document.getElementById('console-underscore');
+//   var letterCount = 1;
+//   var x = 1;
+//   var waiting = false;
+//   var target = document.getElementById(id);
+//   target.setAttribute('style', 'color:' + colors[0]);
+  
+//   window.setInterval(function() {
+//     if (letterCount === 0 && waiting === false) {
+//       waiting = true;
+//       target.innerHTML = words[0].substring(0, letterCount);
+//       window.setTimeout(function() {
+//         var usedColor = colors.shift();
+//         colors.push(usedColor);
+//         var usedWord = words.shift();
+//         words.push(usedWord);
+//         x = 1;
+//         target.setAttribute('style', 'color:' + colors[0]);
+//         letterCount += x;
+//         waiting = false;
+//       }, 1000);
+//     } else if (letterCount === words[0].length + 1 && waiting === false) {
+//       waiting = true;
+//       window.setTimeout(function() {
+//         x = -1;
+//         letterCount += x;
+//         waiting = false;
+//       }, 1000);
+//     } else if (waiting === false) {
+//       target.innerHTML = words[0].substring(0, letterCount);
+//       letterCount += x;
+//     }
+//   }, 120);
+  
+//   window.setInterval(function() {
+//     if (visible === true) {
+//       con.className = 'console-underscore hidden';
+//       visible = false;
+//     } else {
+//       con.className = 'console-underscore';
+//       visible = true;
+//     }
+//   }, 400);
+//}
+// ------------------- TEXT MAIN ------------------- END ---
+
+// ------------------- FORM ------------------- GO ---
+
+// Validar formulario y publicar mensaje
 
 function validarFormulario() {
-    var nombre = document.getElementById('nombre').value.trim();
-    var lugar = document.getElementById('lugar').value.trim();
-    var mensaje = document.getElementById('mensaje').value.trim();
-    var fotoInput = document.getElementById('foto').files[0];
+    console.log('dentro de validarFormulario')
+    let nombre = document.getElementById('nombre').value.trim();
+    let ingredients = document.getElementById('ingredients').value.trim();
+    let mensaje = document.getElementById('mensaje').value.trim();
+    let fotoInput = document.getElementById('foto').files[0];
 
     // Verificar que los campos obligatorios estén completos
-    if (nombre === '' || lugar === '' || mensaje === '' || !fotoInput) {
+    if (nombre === '' || ingredients === '' || mensaje === '' || !fotoInput) {
         alert('Por favor, completa todos los campos obligatorios.');
+        console.log("Nombre: " + nombre,
+        "Ingredients: " + ingredients,
+        "Mensaje: " + mensaje,
+        "Foto: "  + foto);
         return false; // Evitar el envío del formulario si faltan campos obligatorios
     }
 
     // Verificar el formato de la foto
-    var extensionesPermitidas = ['image/jpeg', 'image/png', 'video/mp4'];
-    if (extensionesPermitidas.indexOf(fotoInput.type) === -1) {
+    let extensionesPermitidas = ['image/jpeg', 'image/png', 'video/mp4'];
+    if (!extensionesPermitidas.includes(fotoInput.type)) {
         alert('Por favor, selecciona un archivo de imagen (JPEG, PNG) o video (MP4).');
         return false; // Evitar el envío del formulario si el formato no es válido
+    }
+
+    // Verificar el tamaño del archivo (ejemplo: 5MB máximo)
+    let tamañoMaximo = 5 * 1024 * 1024; // 5MB
+    if (fotoInput.size > tamañoMaximo) {
+        alert('El archivo es demasiado grande. Máximo 5MB.');
+        return false; // Evitar el envío del formulario si el tamaño del archivo es demasiado grande
     }
 
     return true; // Envío del formulario si pasa todas las validaciones
 }
 
 function actualizarContador() {
-    var mensaje = document.getElementById('mensaje').value;
-    var contador = document.getElementById('contador');
-    var caracteresRestantes = 1000 - mensaje.length;
+    let mensaje = document.getElementById('mensaje').value;
+    let contador = document.getElementById('contador');
+    let caracteresRestantes = 1000 - mensaje.length;
     contador.textContent = caracteresRestantes + '/1000';
-    
-    // Deshabilitar la entrada de texto cuando el contador llega a cero
-    var mensajeInput = document.getElementById('mensaje');
-    if (caracteresRestantes <= 0) {
-        mensajeInput.value = mensajeInput.value.slice(0, 1000);
-        mensajeInput.setAttribute('disabled', 'disabled');
-    } else {
-        mensajeInput.removeAttribute('disabled');
-    }
 }
 
 function publicarMensaje() {
-    
-    var nombre = document.getElementById('nombre').value;
-    var lugar = document.getElementById('lugar').value;
-    var mensaje = document.getElementById('mensaje').value;
-    var fotoInput = document.getElementById('foto').files[0];
-    
-    var mensajesList = document.getElementById('mensajesList');
-    var nuevoMensaje = document.createElement('div');
+    alert('dentro publicarMensaje')
+    let nombre = document.getElementById('nombre').value;
+    let ingredients = document.getElementById('ingredients').value;
+    let mensaje = document.getElementById('mensaje').value;
+    let fotoInput = document.getElementById('foto').files[0];
+
+    let mensajesList = document.getElementById('mensajesList');
+    let nuevoMensaje = document.createElement('div');
     nuevoMensaje.innerHTML = `
-        <p><strong>Recipe:</strong> ${nombre}</p>
-        <p><strong>Ingredients:</strong> ${lugar}</p>
-        <p><strong>Preparation:</strong> ${mensaje}</p>`;
-    
-    if (fotoInput) {
-        var imagen = document.createElement('img');
-        imagen.classList.add('mensaje-imagen');
-        var imagenURL = URL.createObjectURL(fotoInput);
-        imagen.src = imagenURL;
-        nuevoMensaje.appendChild(imagen);
-    }
+        <div class="message-container">
+        <div class="mensajes">
+            <h3>You sent us this recipe</h3>
+            <img class="itemImgTecnology" src="${fotoInput}" alt="newRecipe">
+            <p><strong>Recipe:</strong> ${nombre}</p>
+            <p><strong>Ingredients:</strong> ${ingredients}</p>
+            <p><strong>Preparation:</strong> ${mensaje}</p>
+            <h4>Thank you very much, we will shortly enter it into our DB for viewing.</h4>
+            </div>
+        </div>
+    </div>
+
+
+    `;
+
+     if (fotoInput) {
+         let media;
+         if (fotoInput.type.includes('image')) {
+             media = document.createElement('img');
+         } else if (fotoInput.type.includes('video')) {
+             media = document.createElement('video');
+             media.controls = true;
+         }
+         media.classList.add('mensaje-media');
+         let mediaURL = URL.createObjectURL(fotoInput);
+         media.src = mediaURL;
+         nuevoMensaje.appendChild(media);
+     }
 
     mensajesList.appendChild(nuevoMensaje);
 
     // Resetear el formulario después de publicar el mensaje
     document.getElementById('formulario').reset();
+    actualizarContador(); // Restablecer el contador de caracteres
 }
 
-document.getElementById('formulario').addEventListener('submit', function(event) {
-    if (!validarFormulario()) {
-        event.preventDefault(); // Evitar el envío del formulario si la validación falla
-    } else {
-        event.preventDefault(); // Evitar el comportamiento predeterminado de enviar el formulario
-        publicarMensaje(event); // Llamar a la función para publicar el mensaje
-    }
-});
 
-// ------------------- Formulario ------------------- END ---
-
-// let likeCounts = {
-//     product1: 0,
-//     product2: 0,
-//     product3: 0,
-//     product4: 0,
-//     product5: 0,
-//     product6: 0
-// };
-
-// function toggleLike(productId) {
-//     likeCounts[productId]++;
-//     document.getElementById('like-count-' + productId).innerText = likeCounts[productId];
-// }
+// ------------------- FORM ------------------- END ---
