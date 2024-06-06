@@ -287,7 +287,7 @@ function actualizarContador() {
 }
 
 function publicarMensaje() {
-    alert('dentro publicarMensaje')
+    // alert('dentro publicarMensaje')
     let nombre = document.getElementById('nombre').value;
     let ingredients = document.getElementById('ingredients').value;
     let mensaje = document.getElementById('mensaje').value;
@@ -299,17 +299,18 @@ function publicarMensaje() {
         <div class="message-container">
         <div class="mensajes">
             <h3>You sent us this recipe</h3>
-            <img class="itemImgTecnology" src="${fotoInput}" alt="newRecipe">
             <p><strong>Recipe:</strong> ${nombre}</p>
             <p><strong>Ingredients:</strong> ${ingredients}</p>
             <p><strong>Preparation:</strong> ${mensaje}</p>
+            
             <h4>Thank you very much, we will shortly enter it into our DB for viewing.</h4>
             </div>
         </div>
     </div>
 
-
     `;
+
+// <img class="itemImgTecnology" src="${fotoInput}" alt="newRecipe">
 
      if (fotoInput) {
          let media;
@@ -327,9 +328,8 @@ function publicarMensaje() {
 
     mensajesList.appendChild(nuevoMensaje);
 
-    // Resetear el formulario después de publicar el mensaje
     document.getElementById('formulario').reset();
-    actualizarContador(); // Restablecer el contador de caracteres
+    actualizarContador(); 
 }
 
 

@@ -51,11 +51,10 @@
 
 <!------------------------------------- Sidebar -------------------------------------------GO--->
     <aside class="sidebar">
-      <h2 class="title2">Main ingredients</h2>
-        
-        <!-- <div id="recipe-container"></div> -->
+      
 
-        <div class="recipe-container">
+      <div class="recipe-container">
+        <h3 class="title2">Main ingredients</h3>  
           <div class="ingredient-button" onclick="fetchData('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken', 'meal')">
               <img src="https://www.themealdb.com/images/ingredients/Chicken.png" alt="Chicken" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken')">
               <button id="button_selector">Chicken</button>
@@ -72,7 +71,6 @@
               <img src="https://www.themealdb.com/images/ingredients/Salmon.png" alt="Salmon" onclick="getMeals('https://www.themealdb.com/api/json/v1/1/filter.php?i=Salmon')">
               <button id="button_selector">Salmon</button>
           </div>
-
       </div>
 
     </aside>
@@ -80,13 +78,8 @@
 
 <!------------------------------------- Main -------------------------------------------GO--->
     <article class="main">
-      
-
         <!---------------- List-Products ------------GO-->
-      <div class="container"></div>
-      <div id="mealsDiv"></div>
-
-    <div id="recipesDiv"></div>
+      <div id="recipesDiv"></div>
 
       <div id="modal">
           <div id="modal-content">

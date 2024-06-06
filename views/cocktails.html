@@ -50,12 +50,12 @@
 
     <!------------------------------------- Sidebar -------------------------------------------GO--->
     <aside class="sidebar">     
-      <h2 class="title2">Main ingredients</h2>   
+       
 
-        <div class="recipe-container">
+    <div class="recipe-container">
+      <h3 class="title2">Main ingredients</h3>  
           <div class="ingredient-button" onclick="fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin', 'drink')">
               <img src="https://www.thecocktaildb.com/images/ingredients/Gin.png" alt="Gin" onclick="getCocktails('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin')">
-              <h3></h3>
               <button id="button_selector">Gin</button>
           </div>
           <div class="ingredient-button" onclick="fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=rum', 'drink')">
@@ -69,17 +69,16 @@
           <div class="ingredient-button" onclick="fetchData('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vodka', 'drink')">
               <img src="https://www.thecocktaildb.com/images/ingredients/Vodka.png" alt="Vodka" onclick="getCocktails('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=vodka')">
               <button id="button_selector">Vodka</button>
-          </div>
-    
+          </div> 
       </div>
 
     </aside>
 <!------------------------------------- Sidebar -------------------------------------------END---> 
 
 <!------------------------------------- Main -------------------------------------------GO--->
-    <article class="main">
-      <h1 style="color: aquamarine;">Cocktails</h1>
-
+    
+<article class="main">
+    
         <!---------------- List-Products ------------GO-->
       
 
