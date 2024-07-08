@@ -2,6 +2,6 @@
 node_modules
 package-lock.json
 package.json
-public/videos/cocktails.mp4
-public/videos/food.mp4
-public/videos/mountain.mp4
+# public/videos/cocktails.mp4
+# public/videos/food.mp4
+# public/videos/mountain.mp4
